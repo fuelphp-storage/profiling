@@ -2,8 +2,6 @@
 
 namespace FuelPHP\Profiling;
 
-use DateTime;
-
 class Entry
 {
 	/**

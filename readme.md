@@ -1,4 +1,4 @@
-# FuelPHP Profiling Package
+# FuelPHP Profiling Package (Work In Progress)
 
 ```
 // bootstrap
