@@ -7,17 +7,17 @@ use DateTime;
 class Entry
 {
 	/**
-	 * @var  DateTime  $start  start time
+	 * @var  int  $start  start time
 	 */
 	protected $start;
 
 	/**
-	 * @var  DateTime  $end  end time
+	 * @var  int  $end  end time
 	 */
 	protected $end;
 
 	/**
-	 * @var  DateInterval  $interval  interval
+	 * @var  int  $interval  interval
 	 */
 	protected $interval;
 
@@ -51,7 +51,7 @@ class Entry
 		if ($context)
 			$this->setContext($context);
 
-		$this->start = new DateTime('now', $panel->getTimezone());
+		$this->start = microtime();
 	}
 
 	/**
@@ -61,8 +61,8 @@ class Entry
 	 */
 	public function finish()
 	{
-		$this->end = new DateTime('now', $panel->getTimezone());
-		$this->interval = $this->start->diff($this->end);
+		$this->end = microtime();
+		$this->interval = $this->end - $this->start;
 		$this->finished = true;
 
 		return $this;
