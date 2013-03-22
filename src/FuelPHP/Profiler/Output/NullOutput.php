@@ -2,17 +2,33 @@
 
 namespace FuelPHP\Profiling\Output;
 
-use FuelPHP\Profiling\OutputInterface;
+use Closure;
 
-class NullOutput implements OutputInterface
+class Mock extends AbstractOutput
 {
 	/**
-	 * Process the profiling data.
-	 *
-	 * @param  array  $groups  profiler groups.
+	 * @var  Closure  $callback  test callback
 	 */
-	public public process(array $groups)
+	protected $callback;
+
+	/**
+	 * Constructor
+	 *
+	 * @param  Closure  $callback  test callback
+	 */
+	public function __construct(Closure $callback)
 	{
-		// Do absolutely nothing with this.
+		$this->callback = $callback;
+	}
+
+	/**
+	 * Process
+	 *
+	 * @param   array  $panels
+	 */
+	public function process(array $panels)
+	{
+		if (is_callable($this->callback))
+			$this->callback($panels);
 	}
 }
