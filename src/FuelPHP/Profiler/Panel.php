@@ -76,9 +76,18 @@ class Panel
 		return $this;
 	}
 
-	public function getTimezone()
+	/**
+	 * Finish an entry
+	 *
+	 * @param   FuelPHP\Profiling\Entry  $entry  profiling entry
+	 * @return  $this
+	 */
+	public function finish(Entry $entry = null)
 	{
-		return $profiler->getTimezone();
+		if ($entry)
+			$entry->finish();
+
+		return $this;
 	}
 
 	public function getFinishedEntries()

@@ -15,7 +15,6 @@ class Profiler
 	 * @var  array  $config  configuration
 	 */
 	protected $config = array(
-		'timezone' => null,
 		'output'   => array(),
 		'enabled'  => true,
 	);
