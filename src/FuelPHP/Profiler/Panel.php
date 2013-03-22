@@ -44,6 +44,24 @@ class Panel
 	}
 
 	/**
+	 * Starts profiling. Generates an entry in the given panel.
+	 *
+	 * @param   string  $message  entry message
+	 * @param   array   $context  entry context
+	 * @return  FuelPHP\Profiling\Entry
+	 */
+	public function start($message, array $context = array())
+	{
+		if ($this->profiler->isEnabled())
+		{
+			$entry = new Entry($this, $message, $context);
+			$this->entries[] = $entry;
+
+			return $entry;
+		}
+	}
+
+	/**
 	 * Set the panel properties
 	 *
 	 * @param   array  $properties  panel properties

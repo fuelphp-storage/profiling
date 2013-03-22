@@ -12,7 +12,10 @@ $entry = $profiler->start('Panel Name', 'Entry Name');
 $panel = $profiler->getPanel('Other Panel Name');
 
 // and create a new entry from the panel
-$entry = $profiler->start('Entry Mame');
+$entry = $panel->start('Entry Mame');
+
+// you can also provide context vars
+$entry = $profiler->start('
 
 // finish profiling the entry
 $entry->finish();
