@@ -15,7 +15,9 @@ $panel = $profiler->getPanel('Other Panel Name');
 $entry = $panel->start('Entry Mame');
 
 // you can also provide context vars
-$entry = $profiler->start('
+$entry = $panel->start('Entry Name', array(
+	'name' => 'value',
+));
 
 // finish profiling the entry
 $entry->finish();
