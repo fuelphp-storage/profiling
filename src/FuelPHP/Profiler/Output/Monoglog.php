@@ -62,7 +62,8 @@ class Monolog implements OutputInterface
 	/**
 	 * Process a Panel
 	 *
-	 * @param
+	 * @param  FuelPHP\Profiling\Panel  $panel  panel
+	 */
 	public function processPanel(Panel $panel)
 	{
 		$message = 'Profiling panel: '.$panel->getName();
@@ -74,6 +75,11 @@ class Monolog implements OutputInterface
 		}
 	}
 
+	/**
+	 * Process an Entry
+	 *
+	 * @param  FuelPHP\Profiling\Panel  $panel  panel
+	 */
 	public function processEntry(Entry $entry)
 	{
 		$level = $this->level;
