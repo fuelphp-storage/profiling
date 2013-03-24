@@ -55,7 +55,7 @@ $entry = $profiler->start('Panel Name', 'Entry Name');
 $panel = $profiler->getPanel('Other Panel Name');
 
 // and create a new entry from the panel
-$entry = $panel->start('Entry Mame');
+$entry = $panel->start('Entry Name');
 
 // you can also provide context vars
 $entry = $panel->start('Entry Name', array(

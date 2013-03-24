@@ -94,6 +94,11 @@ class Entry
 		return $context;
 	}
 
+	/**
+	 * Check wether the entry is finished.
+	 *
+	 * @return  bool  wether the entry is finished
+	 */
 	public function isFinished()
 	{
 		return $this->finished;

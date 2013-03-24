@@ -1,17 +1,16 @@
 {
-	"name": "fuelphp/profiler",
+	"name": "fuelphp/profiling",
 	"type": "library",
-	"description": "Profiles",
+	"description": "FuelPHP Profiling",
 	"keywords": ["profiler", "profiling"],
-	"homepage": "https://github.com/FrenkyNet/Profiler",
+	"homepage": "https://github.com/FuelPHP/Profiler",
 	"license": "MIT",
 	"require": {
 		"php": ">=5.3.3"
 	},
 	"autoload": {
 		"psr-0": {
-			"FuelPHP\Profiling": "src/",
-			"FuelPHP\Mocking": "mock/"
+			"FuelPHP\Profiling": "src/"
 		}
 	},
 }
